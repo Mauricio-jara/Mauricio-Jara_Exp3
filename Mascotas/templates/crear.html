@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear</title>
+</head>
+<body class="fondo">
+    <br>
+    <div class="container fondo2 bordes">
+        <h2>Creando producto</h2>
+        <div class="container">
+            <form method="POST" id="formulario" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="{{ productosform.field.name }}"> 
+                        {{ productosform.dv.label}}
+                    </label>
+                    {{ productosform.dv }}
+                </div>
+                
+                <div class="row">
+                    <label for="{{ productosform.field.name }}"> 
+                        {{ productosform.nombre.label}}
+                    </label>
+                    {{ productosform.nombre }}
+                </div>
+                
+                <div class="row">
+                    <label for="{{ productosform.field.name }}"> 
+                        {{ productosform.descripcion.label}}
+                    </label>
+                    {{ productosform.descripcion }}
+                </div>
+                
+                <div class="row">
+                    <label for="{{ productosform.field.name }}"> 
+                        {{ productosform.imagen.label}}
+                    </label>
+                    {{ productosform.imagen }}
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-md">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
+                        <a href="{% url 'tienda' %}" class="btn btn-success">Tienda</a>
+                        <br><br>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+</body>
+</html>
+{% endblock %}

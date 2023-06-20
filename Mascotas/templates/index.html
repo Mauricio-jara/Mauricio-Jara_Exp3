@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Palace</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo v1.png'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+</head>
+<body class="fondo">
+    <br>
+    <!--inicio de carrusel-->
+    <div class="container-fluid">
+        <div id="carousel1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <!--inicio de fotos de carrusel-->
+                <div class="carousel-item active">
+                    <img class="d-block w-100 bordes" src="{% static 'img/mascotas.jpg'%}" height="750px">
+                    <div class="carousel-caption">
+                        <h3 class="letra">Gran apertura de nuestra pagina</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="{% url 'vision'%}"><img class="d-block w-100 bordes" src="{% static 'img/mascotas3.jpg'%}" height="750px"></a>
+                    <div class="carousel-caption">
+                        <h3 style="color: aliceblue;">Nuestra visión a sido agregada</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="{% url 'tienda'%}"><img class="d-block w-100 bordes" src="{% static 'img/productos.jpg'%}" height="750px"></a>
+                    <div class="carousel-caption">
+                        <h3 class="letra">Nuevos articulos en la tienda</h3>
+                    </div>
+                </div>
+                <!--fin de fotos de carrusel-->
+            </div>
+            <a class="carousel-control-prev filtro" href="#carousel1" data-slide="prev" >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">previus</span>
+            </a>
+            <a class="carousel-control-next filtro" href="#carousel1" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">previus</span>
+            </a>
+        </div>
+    </div>
+    <!--fin de carrusel-->
+    <br>
+    <!--inicio tarjetas-->
+    <div class="container fondo2 bordes">
+        <br>
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <img src="{% static 'img/logo v1.2.png'%}" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Nuestra Visión</h3>
+                        <p class="card-text">Nuestra visión es ...</p>
+                        <a href="{% url 'vision'%}" class="btn btn-outline-info">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <img src="{% static 'img/carrito.png'%}" class="card-img-top">
+                    <div class="card-body">
+                        <br>
+                        <h3 class="card-title">Nuevos articulos</h3>
+                        <p class="card-text">Visite nuestra tienda para ver nuevos articulos en la tienda</p>
+                        <a href="{% url 'tienda'%}" class="btn btn-outline-info">Ver articulos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <!--fin tarjertas-->
+    <br>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
+{% endblock %}

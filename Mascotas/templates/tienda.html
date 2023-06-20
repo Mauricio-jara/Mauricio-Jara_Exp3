@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tienda</title> 
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo v1.png'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+</head>
+<body class="fondo">
+    <br>
+    <div class="container fondo2 bordes">
+        <br>
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-12 col-md-4">
+                <br>
+                <div class="card text-center">
+                    {% if producto.imagen %}
+                        <img src="{{ producto.imagen.url }}" class="card-img-top mx-auto imagen">
+                    {% else %} 
+                        <img src="{% static 'img/sinfoto.webp' %}" class="card-img-top mx-auto imagen">
+                    {% endif %}   
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            {{ producto.nombre }}
+                        </h4>
+                        <p class="card-text">
+                            {{ producto.descripcion }}<br>
+                        </p>
+                        <a href="#" class="btn btn-success">Comprar</a>
+                        {% if user.is_superuser %}
+                        <a href="{% url 'modificar' producto.dv %}" class="btn btn-warning">Modificar</a>
+                        <a href="{% url 'eliminar' producto.dv %}" class="btn btn-danger">Eliminar</a>
+                        {% endif %}
+                    </div>                   
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        {% if user.is_superuser %}
+        <a href="{% url 'crear' %}" class="btn btn-warning">Crear</a>
+        {% endif %}
+        <br><br>
+    </div>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
+{% endblock %}

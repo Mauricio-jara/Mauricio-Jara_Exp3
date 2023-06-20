@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visión</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo v1.png'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <script src="{% static 'js/funciones.js'%}"></script>
+</head>
+<body class="fondo">
+    <br>
+    <div class="container bordes" style="background-color: white;">
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    <br><br>
+                    <h3 >Nuestra visión</h3>
+                    <p>Como nuestra visión es ayudar a los dueños para poder comprar articulos para sus mascotas, que sea lo más comodos posibles tanto para el dueño como para la mascota en si.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/H7dvgD4GuM8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-6">
+                <div>
+                    <h3 >Nuestra misión</h3>
+                    <p>Como nuestra misión es ayudar a los dueños o nuevos dueños de mascotas a cuidar de sus mscotas lo mejor posible, para que esta este feliz y no este incomoda con su dueño</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
+{% endblock %}
